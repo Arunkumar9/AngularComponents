@@ -1,0 +1,20 @@
+<div *ngFor="let menuTreeItem of menuTree">
+  <a class="ui-menutreeitem-link" (mouseenter)="onItemMouseEnter($event, menuTreeItem)">
+    <span class="ui-menuitem-text">{{menuTreeItem.label}}</span>                         
+    <span class="material-icons mainMenuIcon">{{menuTreeItem.triggerIcon}}</span>
+  </a>
+  
+  <menu-tree-table [menuTreeItem]='menuTreeItem' style="display:none" class="menuItemContainer"></menu-tree-table>
+  <!-- <table id={{menuTreeItem.id}} style="display:none" class="menuItemContainer" (mouseleave)="onItemMouseLeave($event, item1, menuTreeItem)">
+    <tr *ngFor="let menuChildItem of menuTreeItem.children" >
+      <td class="material-icons" (click)="onMenuIconClick($event,menuChildItem)">{{menuChildItem.collapsedIcon}}</td>
+      <td (click)="onMenuItemClick($event,menuChildItem)" >{{menuChildItem.label}} 
+        <table id={{menuChildItem.id}} style="display:none" class="menuItemContainer">
+          <tr *ngFor="let childChildItem of menuChildItem.children">
+            <td>{{childChildItem.label}}</td>
+          </tr>   
+        </table>
+      </td>
+    </tr>
+  </table> -->
+</div>

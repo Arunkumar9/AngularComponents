@@ -1,0 +1,47 @@
+.ui-menutreeitem-link {
+    display:block;
+    /* width:92%; */
+    outline:none;
+    text-decoration:none;
+    font-weight:400;
+    border:solid 1px transparent;
+    float:left;
+    line-height:16px;
+    padding:0.3em;
+    cursor: pointer;
+}
+
+.ui-menutreeitem-link .ui-menutreeitem-icon {
+    display:inline-block;
+}
+
+.ui-menuitem-text {
+    float:left;
+    margin-top: 3px;
+}
+
+.menuItemContainer{
+    border-color: #fbcb09;
+    background: #EEE;
+    border-color: transparent;
+    margin-top: 28px;
+}
+
+.mainMenuIcon{
+    margin-top:0em;
+}
+
+.menuItemtable td {
+    cursor: pointer;
+    position: relative;
+    left: 3px;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    border-radius: 4px;
+  }
+  
+  .menuItemtable td:hover{
+      left: .1em;
+  }
+  
