@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
                     <td *ngIf="(menuChildItem.leaf == false) || (menuChildItem.leaf == 'false')" (click)="onMenuItemClick($event,menuChildItem)">
                         {{menuChildItem.label}}
                     </td>
-                    <menu-tree-table [menuTreeItem]='menuChildItem' class="menuItemContainer"></menu-tree-table>
+                    <menu-tree-table [menuTreeItem]='menuChildItem' style="display:none;width:100%" class="menuItemContainer"></menu-tree-table>
                     <td *ngIf="(menuChildItem.leaf == true) || (menuChildItem.leaf == 'true')" class="material-icons">{{menuChildItem.icon}}</td>
                     <td *ngIf="(menuChildItem.leaf == true) || (menuChildItem.leaf == 'true')" (click)="onMenuLeafItemClick($event,menuChildItem)">{{menuChildItem.label}}</td>
                 </tr>
@@ -45,7 +45,7 @@ export class MenuTreeTable {
       debugger;
     //var childTemplate = document.getElementById(menuItem.id);
     var item = $event.target;    
-    var childTemplate = item.nextElementSibling;
+    var childTemplate = item.nextElementSibling.nextElementSibling;
     if($event.target.innerHTML == menuItem.collapsedIcon){
       childTemplate.style.display='block';
       if($event.target.className == 'material-icons'){

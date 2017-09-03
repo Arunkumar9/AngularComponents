@@ -19,7 +19,7 @@
                     "children": [
                         {
                             "label": "Barcode Reader Component", 
-                            "icon": "fa-file-pdf-o", 
+                            "icon": "assignment_turned_in", 
                             "id": "BarcodeReaderComponent",
                             "children": [],
                             "leaf": true,
@@ -29,7 +29,7 @@
                             "summary":"This article deals with the how to create barcode from a string value acording the configured code and bar related height width configurations."
                         },{
                             "label": "Calender Component", 
-                            "icon": "fa-file-pdf-o",
+                            "icon": "assignment_ind",
                             "id": "CalenderComponent",
                             "children": [],
                             "leaf": true,
@@ -49,7 +49,7 @@
                     "children": [
                         {
                             "label": "Introduction", 
-                            "icon": "fa-file-pdf-o", 
+                            "icon": "room", 
                             "id": "AngularIntroduction",
                             "children": [],
                             "leaf": true,
@@ -60,7 +60,7 @@
                         }, 
                         {
                             "label": "Component Life Cycle",
-                            "icon": "fa-file-pdf-o",
+                            "icon": "settings",
                             "id": "ComponentLifeCycle",
                             "children": [],
                             "leaf": true,
@@ -71,7 +71,7 @@
                         },
                         {
                             "label": "Modules",
-                            "icon": "fa-file-pdf-o",
+                            "icon": "rowing",
                             "id": "Modules",
                             "children": [],
                             "leaf": true,
@@ -82,7 +82,7 @@
                         }, 
                         {
                             "label": "Components",
-                            "icon": "fa-file-pdf-o",
+                            "icon": "search",
                             "id": "Components",
                             "children": [],
                             "leaf": true,
@@ -93,7 +93,7 @@
                         },
                         {
                             "label": "Data Binding",
-                            "icon": "fa-file-pdf-o",
+                            "icon": "restore",
                             "id": "DataBinding",
                             "children": [],
                             "leaf": true,
@@ -104,7 +104,7 @@
                         }, 
                         {
                             "label": "Services",
-                            "icon": "fa-file-pdf-o",
+                            "icon": "print",
                             "id": "Services",
                             "children": [],
                             "leaf": true,
@@ -115,7 +115,7 @@
                         },
                         {
                             "label": "Dependency Injection",
-                            "icon": "fa-file-pdf-o",
+                            "icon": "receipt",
                             "id": "DependencyInjection",
                             "children": [],
                             "leaf": true,
@@ -135,7 +135,7 @@
                     "children": [
                         {
                             "label": "Introduction",
-                            "icon": "fa-file-pdf-o",
+                            "icon": "redeem",
                             "id": "JavaIntroduction",
                             "children": [],
                             "leaf": true,
@@ -146,7 +146,7 @@
                         }, 
                         {
                             "label": "Classes",
-                            "icon": "fa-file-pdf-o",
+                            "icon": "today",
                             "id": "JavaClasses",
                             "children": [],
                             "leaf": true,
@@ -157,7 +157,7 @@
                         },
                         {
                             "label": "Interfaces",
-                            "icon": "fa-file-pdf-o",
+                            "icon": "update",
                             "id": "JavaInterfaces",
                             "children": [],
                             "leaf": true,
@@ -168,7 +168,7 @@
                         }, 
                         {
                             "label": "Abstract Classes", 
-                            "icon": "fa-file-pdf-o",
+                            "icon": "toll",
                             "id": "JavaAbstractClasses",
                             "children": [],
                             "leaf": true,
