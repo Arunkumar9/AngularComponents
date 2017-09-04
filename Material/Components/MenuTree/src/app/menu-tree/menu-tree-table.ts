@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
                     <td *ngIf="(menuChildItem.leaf == false) || (menuChildItem.leaf == 'false')" class="material-icons" (click)="onMenuIconClick($event,menuChildItem)">{{menuChildItem.collapsedIcon}}</td>
                     <td *ngIf="(menuChildItem.leaf == false) || (menuChildItem.leaf == 'false')" (click)="onMenuItemClick($event,menuChildItem)">
                         {{menuChildItem.label}}
+                        <menu-tree-table [menuTreeItem]='menuChildItem' style="display:none;width:100%" class="menuItemContainer"></menu-tree-table>    
                     </td>
-                    <menu-tree-table [menuTreeItem]='menuChildItem' style="display:none;width:100%" class="menuItemContainer"></menu-tree-table>
                     <td *ngIf="(menuChildItem.leaf == true) || (menuChildItem.leaf == 'true')" class="material-icons">{{menuChildItem.icon}}</td>
                     <td *ngIf="(menuChildItem.leaf == true) || (menuChildItem.leaf == 'true')" (click)="onMenuLeafItemClick($event,menuChildItem)">{{menuChildItem.label}}</td>
                 </tr>
@@ -22,39 +22,44 @@ export class MenuTreeTable {
 
   onItemMouseLeave($event, menuItem){
     var item = $event.target;
-    //item.parentElement.style.display = 'none';
+    item.parentElement.style.display = 'none';
   }
 
   onMenuItemClick($event,menuItem){
-    debugger;
-    var childTemplate = document.getElementById(menuItem.id);
-    if($event.target.previousElementSibling.innerHTML == menuItem.collapsedIcon){
-      childTemplate.style.display='block';
-      if($event.target.previousElementSibling.className == 'material-icons'){
-          $event.target.previousElementSibling.innerHTML = menuItem.expandedIcon;
-      }      
-    }else{
-      childTemplate.style.display='none';
-      if($event.target.previousElementSibling.className == 'material-icons'){
-        $event.target.previousElementSibling.innerHTML = menuItem.collapsedIcon;
+    var item = $event.target;    
+    //var childTemplate = item.nextElementSibling;
+    var childTemplate = item.children[0];
+    if(childTemplate != null && childTemplate != undefined){
+      if($event.target.previousElementSibling.innerHTML == menuItem.collapsedIcon){
+        childTemplate.style.display='block';
+        if($event.target.previousElementSibling.className == 'material-icons'){
+            $event.target.previousElementSibling.innerHTML = menuItem.expandedIcon;
+        }      
+      }else{
+        childTemplate.style.display='none';
+        if($event.target.previousElementSibling.className == 'material-icons'){
+          $event.target.previousElementSibling.innerHTML = menuItem.collapsedIcon;
+        }
       }
     }
   }
 
   onMenuIconClick($event,menuItem){
-      debugger;
     //var childTemplate = document.getElementById(menuItem.id);
-    var item = $event.target;    
-    var childTemplate = item.nextElementSibling.nextElementSibling;
-    if($event.target.innerHTML == menuItem.collapsedIcon){
-      childTemplate.style.display='block';
-      if($event.target.className == 'material-icons'){
-          $event.target.innerHTML = menuItem.expandedIcon;
-      }      
-    }else{
-      childTemplate.style.display='none';
-      if($event.target.className == 'material-icons'){
-        $event.target.innerHTML = menuItem.collapsedIcon;
+    //var childTemplate = item.nextElementSibling.nextElementSibling;
+    var item = $event.target;   
+    var childTemplate = item.nextElementSibling.children[0];
+    if(childTemplate != null && childTemplate != undefined){
+      if($event.target.innerHTML == menuItem.collapsedIcon){
+        childTemplate.style.display='block';
+        if($event.target.className == 'material-icons'){
+            $event.target.innerHTML = menuItem.expandedIcon;
+        }      
+      }else{
+        childTemplate.style.display='none';
+        if($event.target.className == 'material-icons'){
+          $event.target.innerHTML = menuItem.collapsedIcon;
+        }
       }
     }
   }
