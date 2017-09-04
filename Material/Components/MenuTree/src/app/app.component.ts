@@ -25,4 +25,12 @@ export class AppComponent implements OnInit{
     );
   }
 
+  onMouseEnterParent($event){
+   // alert('Mouse enter event at parent');
+  }
+
+  onMouseLeaveParent($event){
+    alert('Mouse leave event at parent');
+  }
+
 }

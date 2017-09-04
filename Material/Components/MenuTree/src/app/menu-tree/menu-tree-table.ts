@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'menu-tree-table',
@@ -20,9 +20,20 @@ export class MenuTreeTable {
   @Input() menuTreeItem: any;
   constructor() { }
 
+  @Output()
+  onMouseLeave: EventEmitter<any> = new EventEmitter();
+
+  @Output()
+  onMenuTextItemClick: EventEmitter<any> = new EventEmitter();
+
+  @Output()
+  onMenuIconItemClick: EventEmitter<any> = new EventEmitter();
+
   onItemMouseLeave($event, menuItem){
     var item = $event.target;
     item.parentElement.style.display = 'none';
+
+    this.onMouseLeave.emit({$event,menuItem});
   }
 
   onMenuItemClick($event,menuItem){
@@ -42,6 +53,8 @@ export class MenuTreeTable {
         }
       }
     }
+
+    this.onMenuTextItemClick.emit({$event,menuItem});
   }
 
   onMenuIconClick($event,menuItem){
@@ -62,10 +75,12 @@ export class MenuTreeTable {
         }
       }
     }
+
+    this.onMenuIconItemClick.emit({$event,menuItem});
   }
 
   onMenuLeafItemClick($event,menuChildItem){
-
+      
   }
 
 }
