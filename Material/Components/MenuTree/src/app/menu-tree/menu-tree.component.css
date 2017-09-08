@@ -11,7 +11,7 @@
     cursor: pointer;
 }
 
-.ui-menutreeitem-link .ui-menutreeitem-icon {
+.material-icons {
     display:inline-block;
 }
 
@@ -27,6 +27,12 @@
     margin-top: 28px;
 }
 
+.menuItemChildContainer{
+    border-color: #fbcb09;
+    background: #EEE;
+    border-color: transparent;
+}
+
 .mainMenuIcon{
     margin-top:0em;
 }
@@ -36,7 +42,7 @@
     position: relative;
     left: 3px;
     background-color: #EEE;
-    margin: .5em;
+    /* margin: .5em; */
     padding: .3em 0;
     border-radius: 4px;
   }
