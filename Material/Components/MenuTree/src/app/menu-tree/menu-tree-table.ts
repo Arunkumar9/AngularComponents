@@ -31,9 +31,13 @@ export class MenuTreeTable {
 
   onItemMouseLeave($event, menuItem){
     var item = $event.target;
-    item.parentElement.style.display = 'none';
-
-    this.onMouseLeave.emit({$event,menuItem});
+    if(item.parentElement != null && item.parentElement != undefined){
+      if(item.parentElement.className == 'menuItemContainer'){
+          item.parentElement.style.display = 'none';
+          //Leave event emitter.
+          this.onMouseLeave.emit({$event,menuItem});
+      }
+    }
   }
 
   onMenuItemClick($event,menuItem){
