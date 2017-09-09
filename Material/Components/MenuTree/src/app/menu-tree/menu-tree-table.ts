@@ -29,13 +29,21 @@ export class MenuTreeTable {
   @Output()
   onMenuIconItemClick: EventEmitter<any> = new EventEmitter();
 
+  @Output()
+  onMenuLeafItemSelect: EventEmitter<any> = new EventEmitter();
+
   onItemMouseLeave($event, menuItem){
     var item = $event.target;
     if(item.parentElement != null && item.parentElement != undefined){
-      if(item.parentElement.className == 'menuItemContainer'){
-          item.parentElement.style.display = 'none';
-          //Leave event emitter.
-          this.onMouseLeave.emit({$event,menuItem});
+      var classList = item.parentElement.classList;
+      for(var i=0;i<classList.length;i++){
+        var className = classList[i];
+        if(className == 'menuItemContainer'){
+            item.parentElement.style.display = 'none';
+            //Leave event emitter.
+            this.onMouseLeave.emit({$event,menuItem});
+            break;
+        }
       }
     }
   }
@@ -47,13 +55,23 @@ export class MenuTreeTable {
     if(childTemplate != null && childTemplate != undefined){
       if($event.target.previousElementSibling.innerHTML == menuItem.collapsedIcon){
         childTemplate.style.display='block';
-        if($event.target.previousElementSibling.className == 'material-icons'){
-            $event.target.previousElementSibling.innerHTML = menuItem.expandedIcon;
-        }      
+        var classList = $event.target.previousElementSibling.classList;
+        for(var i=0;i<classList.length;i++){
+          var className = classList[i];
+          if(className == 'material-icons'){
+              $event.target.previousElementSibling.innerHTML = menuItem.expandedIcon;
+              break;
+          }
+        }     
       }else{
         childTemplate.style.display='none';
-        if($event.target.previousElementSibling.className == 'material-icons'){
-          $event.target.previousElementSibling.innerHTML = menuItem.collapsedIcon;
+        var classList = $event.target.previousElementSibling.classList;
+        for(var i=0;i<classList.length;i++){
+          var className = classList[i];
+          if(className == 'material-icons'){
+              $event.target.previousElementSibling.innerHTML = menuItem.collapsedIcon;
+              break;
+          }
         }
       }
     }
@@ -69,13 +87,23 @@ export class MenuTreeTable {
     if(childTemplate != null && childTemplate != undefined){
       if($event.target.innerHTML == menuItem.collapsedIcon){
         childTemplate.style.display='block';
-        if($event.target.className == 'material-icons'){
-            $event.target.innerHTML = menuItem.expandedIcon;
-        }      
+        var classList = $event.target.classList;
+        for(var i=0;i<classList.length;i++){
+          var className = classList[i];
+          if(className == 'material-icons'){
+              $event.target.innerHTML = menuItem.expandedIcon;
+              break;
+          }
+        }     
       }else{
         childTemplate.style.display='none';
-        if($event.target.className == 'material-icons'){
-          $event.target.innerHTML = menuItem.collapsedIcon;
+        var classList = $event.target.classList;
+        for(var i=0;i<classList.length;i++){
+          var className = classList[i];
+          if(className == 'material-icons'){
+              $event.target.innerHTML = menuItem.collapsedIcon;
+              break;
+          }
         }
       }
     }
@@ -83,8 +111,8 @@ export class MenuTreeTable {
     this.onMenuIconItemClick.emit({$event,menuItem});
   }
 
-  onMenuLeafItemClick($event,menuChildItem){
-      
+  onMenuLeafItemClick($event,menuItem){
+      this.onMenuLeafItemSelect.emit({$event,menuItem})
   }
 
 }
