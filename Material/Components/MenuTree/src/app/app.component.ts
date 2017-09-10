@@ -33,4 +33,8 @@ export class AppComponent implements OnInit{
     alert('Mouse leave event at parent');
   }
 
+  onMenuLeafItemSelect($event){
+    alert('Menu Leaf is selected: '+$event.menuItem.label);
+  }
+
 }

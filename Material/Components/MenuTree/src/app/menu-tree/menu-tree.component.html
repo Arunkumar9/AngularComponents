@@ -4,6 +4,9 @@
     <span class="material-icons mainMenuIcon">{{menuTreeItem.triggerIcon}}</span>
   </a>
   
-  <menu-tree-table [menuTreeItem]='menuTreeItem' style="display:none" class="menuItemContainer"></menu-tree-table>
+  <menu-tree-table [menuTreeItem]='menuTreeItem' style="display:none" 
+  class="menuItemContainer" [onMenuLeafItemSelect]="onMenuLeafItemClick">
+
+  </menu-tree-table>
   
 </div>

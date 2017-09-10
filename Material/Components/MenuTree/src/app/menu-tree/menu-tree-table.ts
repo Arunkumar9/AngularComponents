@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                     <td *ngIf="(menuChildItem.leaf == false) || (menuChildItem.leaf == 'false')" class="material-icons" (click)="onMenuIconClick($event,menuChildItem)">{{menuChildItem.collapsedIcon}}</td>
                     <td *ngIf="(menuChildItem.leaf == false) || (menuChildItem.leaf == 'false')" (click)="onMenuItemClick($event,menuChildItem)">
                         {{menuChildItem.label}}
-                        <menu-tree-table [menuTreeItem]='menuChildItem' style="display:none;width:100%" class="menuItemChildContainer"></menu-tree-table>    
+                        <menu-tree-table [menuTreeItem]='menuChildItem' style="display:none;width:100%" class="menuItemChildContainer" [onMenuLeafItemSelect]="onMenuLeafItemSelect"></menu-tree-table>    
                     </td>
                     <td *ngIf="(menuChildItem.leaf == true) || (menuChildItem.leaf == 'true')" class="material-icons">{{menuChildItem.icon}}</td>
                     <td *ngIf="(menuChildItem.leaf == true) || (menuChildItem.leaf == 'true')" (click)="onMenuLeafItemClick($event,menuChildItem)">{{menuChildItem.label}}</td>
@@ -29,8 +29,8 @@ export class MenuTreeTable {
   @Output()
   onMenuIconItemClick: EventEmitter<any> = new EventEmitter();
 
-  @Output()
-  onMenuLeafItemSelect: EventEmitter<any> = new EventEmitter();
+  @Input()
+  onMenuLeafItemSelect: EventEmitter<any>;
 
   onItemMouseLeave($event, menuItem){
     var item = $event.target;
@@ -112,7 +112,7 @@ export class MenuTreeTable {
   }
 
   onMenuLeafItemClick($event,menuItem){
-      this.onMenuLeafItemSelect.emit({$event,menuItem})
+      this.onMenuLeafItemSelect.emit({$event,menuItem});
   }
 
 }
