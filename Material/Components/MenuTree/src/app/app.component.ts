@@ -26,15 +26,19 @@ export class AppComponent implements OnInit{
   }
 
   onMouseEnterParent($event){
-   // alert('Mouse enter event at parent');
+    //alert('Mouse enter event at parent');
   }
 
   onMouseLeaveParent($event){
-    alert('Mouse leave event at parent');
+    //alert('Mouse leave event at parent');
   }
 
   onMenuLeafItemSelect($event){
-    alert('Menu Leaf is selected: '+$event.menuItem.label);
+    //alert('Menu Leaf is selected: '+$event.menuItem.label);
+  }
+
+  onMenuGroupItemSelect($event){
+    //alert('Menu Group Expanded/Collapsed');
   }
 
 }

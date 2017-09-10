@@ -20,17 +20,17 @@ export class MenuTreeTable {
   @Input() menuTreeItem: any;
   constructor() { }
 
-  @Output()
-  onMouseLeave: EventEmitter<any> = new EventEmitter();
+  @Input()
+  onMouseLeaveEvent: EventEmitter<any>;
 
-  @Output()
-  onMenuTextItemClick: EventEmitter<any> = new EventEmitter();
-
-  @Output()
-  onMenuIconItemClick: EventEmitter<any> = new EventEmitter();
+  @Input()
+  onMenuIconItemClick: EventEmitter<any>;
 
   @Input()
   onMenuLeafItemSelect: EventEmitter<any>;
+
+  @Input()
+  onMenuTextItemClick: EventEmitter<any>;
 
   onItemMouseLeave($event, menuItem){
     var item = $event.target;
@@ -41,7 +41,7 @@ export class MenuTreeTable {
         if(className == 'menuItemContainer'){
             item.parentElement.style.display = 'none';
             //Leave event emitter.
-            this.onMouseLeave.emit({$event,menuItem});
+            this.onMouseLeaveEvent.emit({$event,menuItem});
             break;
         }
       }

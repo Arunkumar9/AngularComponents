@@ -8,7 +8,8 @@
 
 <div style="width:100%">
   <md-menu-tree [menuTree]='menuTreeData' (onMouseEnter)="onMouseEnterParent($event)" 
-      (onMouseLeave)="onMouseLeaveParent($event)" (onMenuLeafItemSelect)="onMenuLeafItemSelect($event)">
+      (onMouseLeave)="onMouseLeaveParent($event)" (onMenuLeafItemSelect)="onMenuLeafItemSelect($event)"
+      (onMenuGroupItemSelect)="onMenuGroupItemSelect($event)">
   </md-menu-tree>
 </div>
 <div style="width:100%;float:left">
