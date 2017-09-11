@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'menu-tree-table',
   template: `<table class="menuItemtable" (mouseleave)="onItemMouseLeave($event, menuTreeItem)">
-                <tr *ngFor="let menuChildItem of menuTreeItem.children" >
+                <tr class="menuItemRow" *ngFor="let menuChildItem of menuTreeItem.children" >
                     <td *ngIf="(menuChildItem.leaf == false) || (menuChildItem.leaf == 'false')" class="material-icons" (click)="onMenuIconClick($event,menuChildItem)">{{menuChildItem.collapsedIcon}}</td>
                     <td *ngIf="(menuChildItem.leaf == false) || (menuChildItem.leaf == 'false')" (click)="onMenuItemClick($event,menuChildItem)">
                         {{menuChildItem.label}}
@@ -60,6 +60,7 @@ export class MenuTreeTable {
           var className = classList[i];
           if(className == 'material-icons'){
               $event.target.previousElementSibling.innerHTML = menuItem.expandedIcon;
+              $event.target.previousElementSibling.style.paddingTop='1px';
               break;
           }
         }     
@@ -70,6 +71,7 @@ export class MenuTreeTable {
           var className = classList[i];
           if(className == 'material-icons'){
               $event.target.previousElementSibling.innerHTML = menuItem.collapsedIcon;
+              $event.target.previousElementSibling.style.paddingTop='5px';
               break;
           }
         }
@@ -92,6 +94,7 @@ export class MenuTreeTable {
           var className = classList[i];
           if(className == 'material-icons'){
               $event.target.innerHTML = menuItem.expandedIcon;
+              $event.target.style.paddingTop='1px';
               break;
           }
         }     
@@ -102,6 +105,7 @@ export class MenuTreeTable {
           var className = classList[i];
           if(className == 'material-icons'){
               $event.target.innerHTML = menuItem.collapsedIcon;
+              $event.target.style.paddingTop='5px';
               break;
           }
         }

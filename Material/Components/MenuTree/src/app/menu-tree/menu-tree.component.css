@@ -24,7 +24,7 @@
     border-color: #fbcb09;
     background: #EEE;
     border-color: transparent;
-    margin-top: 28px;
+    margin-top: 30px;
 }
 
 .menuItemChildContainer{
@@ -36,6 +36,10 @@
 .mainMenuIcon{
     margin-top:0em;
 }
+.menuItemtable {
+    margin-top: 16px;
+    margin-left: 12px;
+}
 
 .menuItemtable td {
     cursor: pointer;
@@ -45,9 +49,13 @@
     /* margin: .5em; */
     padding: .3em 0;
     border-radius: 4px;
+    padding-right: 5px;
   }
   
-  .menuItemtable td:hover{
-      left: .1em;
-  }
-  
+.menuItemtable td:hover{
+    left: .1em;
+}
+
+.menuItemRow{
+    height: 35px;
+}

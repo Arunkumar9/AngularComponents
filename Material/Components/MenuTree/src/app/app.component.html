@@ -6,12 +6,13 @@
 </div>
 <h2>Menu Tree Component: </h2>
 
-<div style="width:100%">
+<div style="width:100%;float:left">
   <md-menu-tree [menuTree]='menuTreeData' (onMouseEnter)="onMouseEnterParent($event)" 
       (onMouseLeave)="onMouseLeaveParent($event)" (onMenuLeafItemSelect)="onMenuLeafItemSelect($event)"
       (onMenuGroupItemSelect)="onMenuGroupItemSelect($event)">
   </md-menu-tree>
 </div>
+
 <div style="width:100%;float:left">
   <h1>Example document</h1>
   <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>

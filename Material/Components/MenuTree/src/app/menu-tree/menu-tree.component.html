@@ -4,7 +4,7 @@
     <span class="material-icons mainMenuIcon">{{menuTreeItem.triggerIcon}}</span>
   </a>
   
-  <menu-tree-table [menuTreeItem]='menuTreeItem' style="display:none" 
+  <menu-tree-table [menuTreeItem]='menuTreeItem' style="display:none;position:absolute;z-index:10;" 
   class="menuItemContainer" [onMenuLeafItemSelect]="onMenuLeafItemClick" 
   [onMenuTextItemClick]="onMenuTextItemClick" [onMenuIconItemClick]="onMenuIconItemClick" [onMouseLeaveEvent]="onMouseLeaveEvent">
 
